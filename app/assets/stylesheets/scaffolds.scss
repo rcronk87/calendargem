@@ -1,10 +1,12 @@
 body {
+
   background-color: #8eafe2;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+
 }
 
 p, ol, ul, td {
@@ -40,6 +42,7 @@ td {
   padding: 0 5px 7px;
 }
 
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;
@@ -63,7 +66,7 @@ div {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 
-  
+
 
   h2 {
     text-align: left;
@@ -83,4 +86,8 @@ div {
 
 label {
   display: block;
+}
+
+body {
+background-image: image-url("http://www.nmgncp.com/data/out/201/5360858-jungle-theme-wallpaper.jpg");
 }

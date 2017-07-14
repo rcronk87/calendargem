@@ -1,6 +1,14 @@
 class SightingsController < ApplicationController
   before_action :set_sighting, only: [:show, :edit, :update, :destroy]
 
+  def get_events
+    @sightings = Sighting.all
+    events = []
+    @sightings.each do |sighting|
+      events << { id: sighting.id, title: sighting.animal.name, start: Date.parse(sighting.date), url: Rails.application.routes.url_helpers.sighting_path(sighting.id)}
+    end
+    render :json => events.to_json
+  end
   # GET /sightings
   # GET /sightings.json
   def index
@@ -91,4 +99,6 @@ class SightingsController < ApplicationController
     def sighting_params
       params.require(:sighting).permit(:date, :time, :latitude, :longitude, :animal_id, :region4_id)
     end
+
+
 end
